@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        navigationView.selectedItemId = R.id.navigation_open
+//        navigationView.selectedItemId = R.id.navigation_open
     }
 
     private fun loadFragment(fragment: Fragment) {

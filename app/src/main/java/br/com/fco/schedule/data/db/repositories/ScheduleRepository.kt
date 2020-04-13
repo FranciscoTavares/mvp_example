@@ -11,24 +11,32 @@ import io.realm.kotlin.where
 
 object ScheduleRepository {
 
-    fun findAllOpen(): RealmList<Schedule> {
+    fun findAllOpen(): List<Schedule> {
         val result = Realm.getDefaultInstance().where<User>()
             .beginGroup()
             .equalTo("logged", true)
             .equalTo("scheduleList.status", StatusSchedule.OPEN.name)
             .endGroup()
             .findFirst()
-        return result?.scheduleList ?: RealmList()
+
+        val list = result?.scheduleList?.filter {
+            it.status == StatusSchedule.OPEN.name
+        }
+        return list ?: ArrayList()
     }
 
-    fun findAllClosed(): RealmList<Schedule> {
+    fun findAllClosed(): List<Schedule> {
         val result = Realm.getDefaultInstance().where<User>()
             .beginGroup()
             .equalTo("logged", true)
             .equalTo("scheduleList.status", StatusSchedule.CLOSED.name)
             .endGroup()
             .findFirst()
-        return result?.scheduleList ?: RealmList()
+        val list = result?.scheduleList?.filter {
+            it.status == StatusSchedule.CLOSED.name
+        }
+
+        return list ?: ArrayList()
     }
 
     fun insertOne(t: Schedule) {

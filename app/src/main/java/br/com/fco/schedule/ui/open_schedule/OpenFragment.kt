@@ -73,20 +73,20 @@ class OpenFragment : Fragment() {
             lastPosition = groupPosition
         }
 
-        expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-            v.btnChangeState.setOnClickListener {
-                lastProgressBar = v.loading
-                lastButton = v.btnChangeState
-                lastButtonText = v.btnChangeState.text
-                presenter?.handlerChangeStateSchedule(
-                    adapter?.getChild(
-                        groupPosition,
-                        groupPosition
-                    ) as Schedule
-                )
-            }
-            false
-        }
+//        expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+//            v.btnChangeState.setOnClickListener {
+//                lastProgressBar = v.loading
+//                lastButton = v.btnChangeState
+//                lastButtonText = v.btnChangeState.text
+//                presenter?.handlerChangeStateSchedule(
+//                    adapter?.getChild(
+//                        groupPosition,
+//                        groupPosition
+//                    ) as Schedule
+//                )
+//            }
+//            false
+//        }
 
         adapter?.changeState = { schedule, progress, btn ->
             lastProgressBar = progress
