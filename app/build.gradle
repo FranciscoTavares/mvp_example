@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "br.com.fco.schedule"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            buildConfigField 'String', 'EMAIL_ACCOUNT', '"fco.teste.uds@gmail.com"'
+            buildConfigField 'String', 'EMAIL_ACCOUNT_PASSWORD', '"Z3A%GqB&#N65"'
+            buildConfigField 'String', 'SENDER', '"APP_UDS"'
+
+            dimension "environment"
+            buildConfigField 'String', 'ENVIROMENT', '"dev"'
+        }
+        prod {
+            versionName "1.0.0"
+            buildConfigField 'String', 'EMAIL_ACCOUNT', '""'
+            buildConfigField 'String', 'EMAIL_ACCOUNT_PASSWORD', '""'
+            buildConfigField 'String', 'SENDER', '"APP_UDS"'
+
+            dimension "environment"
+            buildConfigField 'String', 'ENVIROMENT', '"prod"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Material
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //Utils
+    implementation 'com.github.andersonrsoares:kotlin-utils:1.1.3'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    //Form validations
+    implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
+
+    //Send email
+    implementation 'com.github.tntkhang:gmail-sender-library:1.3.0'
+}

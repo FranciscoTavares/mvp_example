@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">MVP Schedule</string>
+    <string name="title_open">Abertas</string>
+    <string name="title_closed">Fechadas</string>
+    <string name="title_profile">Perfil</string>
+
+    <!--LoginActivity-->
+    <string name="activity_login_field_email">E-mail</string>
+    <string name="activity_login_field_password">Senha</string>
+    <string name="activity_login_btn_login">Entrar</string>
+    <string name="activity_login_btn_signup">Criar conta</string>
+    <string name="activity_login_btn_recover_password">Recuperar senha</string>
+    <string name="activity_login_title">Bem-vindo</string>
+    <string name="activity_login_subtitle">ao aplicativo de pautas MVP</string>
+    <string name="activity_login_email_or_password_invalid">E-mail ou senha não conferem</string>
+
+    <!--SignupActivity-->
+    <string name="activity_signup_title">Cadastro</string>
+    <string name="activity_signup_subtitle">Preencha os campos abaixo e pressione o botão cadastrar, fácil e rápido!</string>
+    <string name="activity_signup_field_name">Nome</string>
+    <string name="activity_signup_field_email">E-mail</string>
+    <string name="activity_signup_field_password">Senha</string>
+    <string name="activity_signup_btn_signup">Cadastrar</string>
+    <string name="activity_signup_msg_success">Cadastro realizado com sucesso</string>
+
+    <!--ProfileFragment_-->
+    <string name="profile_fragment_title">Perfil</string>
+    <string name="profile_fragment_subtitle">Veja seu perfil atualizado aqui. Se desejar, pode sair da sua conta, pressionando no botão sair.</string>
+    <string name="profile_fragment_field_name">Nome</string>
+    <string name="profile_fragment_field_email">E-mail</string>
+    <string name="profile_fragment_btn_logout">Sair</string>
+    <string name="profile_fragment_msg_logout">Não foi possível sair da sua conta, tente novamente</string>
+
+    <!--RecoverPasswordActivity-->
+    <string name="activity_recover_password_title">Recuperar senha</string>
+    <string name="activity_recover_password_subtitle">Informe seu e-mail cadastrado para podermos lhe enviar instruções para obter acesso a sua conta novamente.</string>
+    <string name="activity_recover_password_field_email">E-mail</string>
+    <string name="activity_recover_password_btn_send">Enviar</string>
+    <string name="activity_recover_email_invalid">E-mail inválido</string>
+    <string name="activity_recover_email_body">Olá {1}, você solicitou a recuperação de sua senha.\nSua senha: {2}\n\nNós da MVP estamos sempre a disposição a lhe ajudar.\n\nAtt.\n\nEquipe MVP</string>
+    <string name="activity_recover_email_title">APP MVP - Recuperação de senha</string>
+    <string name="activity_recover_email_fail">Ops, algo deu errado</string>
+    <string name="activity_recover_email_success">Lhe enviamos um e-mail</string>
+
+    <!--CreateScheduleActivity-->
+    <string name="activity_create_schedule_btn_conclude">Finalizar</string>
+    <string name="activity_create_schedule_error">Preencha com dois ou mais caracteres</string>
+    <string name="activity_create_schedule_title">Nova pauta</string>
+    <string name="activity_create_schedule_subtitle">Preencha os campos abaixo e pressione o botão criar, fácil e rápido!</string>
+    <string name="activity_create_schedule_field_title">Digite o título</string>
+    <string name="activity_create_schedule_field_description">Breve descrição</string>
+    <string name="activity_create_schedule_field_details">Detalhes</string>
+    <string name="activity_create_schedule_field_author">Autor</string>
+    <string name="activity_create_schedule_btn_reopen">Reabrir</string>
+
+    <!--OpenFragment-->
+    <string name="open_fragment_placeholder">Você não tem pautas abertas</string>
+
+    <!--ClosedFragment-->
+    <string name="cloded_fragment_placeholder">Você não tem pautas fechadas</string>
+
+</resources>
