@@ -72,7 +72,7 @@
             android:drawablePadding="16dp"
             android:hint="@string/activity_signup_field_name"
             android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:maxLength="50"
             android:maxLines="1"
             android:textColor="@color/white"

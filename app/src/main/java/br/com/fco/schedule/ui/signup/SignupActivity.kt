@@ -37,10 +37,6 @@ class SignupActivity : AppCompatActivity() {
 
         presenter = SignupPresenter
 
-        btnSignup.setOnClickListener {
-            handleSignup()
-        }
-
         edtName.doOnTextChanged { _, _, _, _ ->
             presenter?.validatorName(edtName.text.toString())
         }
@@ -76,6 +72,14 @@ class SignupActivity : AppCompatActivity() {
                 btnSignup,
                 getString(R.string.activity_signup_btn_signup)
             )
+        }
+
+        btnSignup.setOnClickListener {
+            handleSignup()
+        }
+
+        btnBack.setOnClickListener {
+            onBackPressed()
         }
     }
 
